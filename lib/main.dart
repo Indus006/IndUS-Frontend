@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'routes/app_routes.dart';
-import 'theme/app_theme.dart';
+import 'package:indus/routes/app_routes.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,8 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-     // theme: AppTheme.lightTheme,
-      initialRoute: AppRoutes.splashScreen,
+      initialRoute: AppRoutes.login,
       routes: AppRoutes.getRoutes(),
     );
   }

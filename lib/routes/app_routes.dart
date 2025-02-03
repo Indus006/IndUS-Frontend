@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
-import '../views/student/accommodation_screen.dart';
-import '../views/student/student_home_screen.dart';
+import 'package:indus/views/common/login_screen.dart';
+import 'package:indus/views/student/student_home_screen.dart';
+import 'package:indus/views/driver/home_screen.dart';
+import 'package:indus/views/business/business_home_screen.dart';
 
 class AppRoutes {
-  static const splashScreen = '/';
-  static const homeScreen = '/home';
-  static const accommodationScreen = '/accommodation';
+  static const login = '/';
+  static const studentHome = '/student-home';
+  static const driverHome = '/driver-home';
+  static const businessHome = '/business-home';
 
   static Map<String, WidgetBuilder> getRoutes() {
     return {
-      splashScreen: (_) => StudentHomeScreen(),
-      homeScreen: (_) => StudentHomeScreen(),
-      accommodationScreen: (_) => AccommodationScreen(),
+      login: (context) => LoginScreen(),
+      studentHome: (context) => StudentHomeScreen(),
+      driverHome: (context) => DriverHomeScreen(),
+      businessHome: (context) => BusinessHomeScreen(),
     };
   }
 }
