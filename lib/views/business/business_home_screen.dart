@@ -100,6 +100,25 @@ class BusinessHomeScreen extends StatelessWidget {
         currentIndex: 0,
         selectedItemColor: Colors.blue,
         unselectedItemColor: Colors.grey,
+        onTap: (index) {
+          switch (index) {
+            case 0:
+              Navigator.pushNamed(context, '/home');
+              break;
+            case 1:
+              Navigator.pushNamed(context, '/post-job');
+              break;
+            case 2:
+              Navigator.pushNamed(context, '/offers');
+              break;
+            case 3:
+              Navigator.pushNamed(context, '/profile');
+              break;
+            case 4:
+              Navigator.pushNamed(context, '/settings');
+              break;
+          }
+        },
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(icon: Icon(Icons.work), label: "Jobs"),
