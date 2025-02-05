@@ -7,7 +7,6 @@ class BusinessSignUpScreen extends StatefulWidget {
 
 class _BusinessSignUpScreenState extends State<BusinessSignUpScreen> {
   final _formKey = GlobalKey<FormState>();
-  String? _selectedBusinessType;
   final List<String> _businessTypes = [
     "Retail",
     "Education",
@@ -144,7 +143,6 @@ class _BusinessSignUpScreenState extends State<BusinessSignUpScreen> {
                     }).toList(),
                     onChanged: (value) {
                       setState(() {
-                        _selectedBusinessType = value;
                       });
                     },
                     validator: (value) {
