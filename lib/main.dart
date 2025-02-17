@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:indus/views/common/login_screen.dart';
 import 'package:indus/views/driver/home_screen.dart';
 import 'package:indus/views/student/student_home_screen.dart';
+import 'package:indus/views/business/business_profile_screen.dart';
 import 'package:indus/views/business/business_home_screen.dart';
 import 'package:indus/views/common/bussiness_signup_screen.dart';
 import 'package:indus/views/common/student_driver_signup_screen.dart';
