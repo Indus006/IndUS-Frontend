@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:indus/routes/app_routes.dart';
-import 'package:indus/routes/route_names.dart';
 import 'package:indus/views/business/business_profile_screen.dart';
 import 'package:indus/views/business/business_home_screen.dart';
 import 'package:indus/views/business/job_posting_screen.dart';
