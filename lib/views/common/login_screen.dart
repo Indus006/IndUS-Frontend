@@ -107,6 +107,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: ElevatedButton(
                     onPressed: () {
                       // Handle Login
+                      print(
+                          "Login button pressed. Selected role: $selectedRole");
                       _navigateToHomeScreen(context);
                     },
                     child: Text("Login"),
@@ -154,6 +156,7 @@ class _LoginScreenState extends State<LoginScreen> {
         onTap: () {
           setState(() {
             selectedRole = role;
+            print("Selected role: $selectedRole");
           });
         },
         child: Container(
@@ -184,37 +187,46 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   void _navigateToHomeScreen(BuildContext context) {
+    print("Navigating to home screen for role: $selectedRole");
     if (selectedRole == "Student") {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => StudentHomeScreen()),
-      );
+      Navigator.pushNamed(context, '/studentHome').then((_) {
+        print("Navigation to StudentHomeScreen completed.");
+      }).catchError((error) {
+        print("Error navigating to StudentHomeScreen: $error");
+      });
     } else if (selectedRole == "Driver") {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => DriverHomeScreen()),
-      );
+      Navigator.pushNamed(context, '/driverHome').then((_) {
+        print("Navigation to DriverHomeScreen completed.");
+      }).catchError((error) {
+        print("Error navigating to DriverHomeScreen: $error");
+      });
     } else if (selectedRole == "Business") {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => BusinessHomeScreen()),
-      );
+      Navigator.pushNamed(context, '/businessHome').then((_) {
+        print("Navigation to BusinessHomeScreen completed.");
+      }).catchError((error) {
+        print("Error navigating to BusinessHomeScreen: $error");
+      });
+    } else {
+      print("Unknown role: $selectedRole");
     }
   }
 
   void _navigateToSignUpScreen(BuildContext context) {
+    print("Navigating to sign-up screen for role: $selectedRole");
     if (selectedRole == "Business") {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => BusinessSignUpScreen()),
-      );
+      Navigator.pushNamed(context, '/businessSignUp').then((_) {
+        print("Navigation to BusinessSignUpScreen completed.");
+      }).catchError((error) {
+        print("Error navigating to BusinessSignUpScreen: $error");
+      });
     } else if (selectedRole == "Student" || selectedRole == "Driver") {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => StudentDriverSignupScreen()),
-      );
+      Navigator.pushNamed(context, '/studentDriverSignUp').then((_) {
+        print("Navigation to StudentDriverSignupScreen completed.");
+      }).catchError((error) {
+        print("Error navigating to StudentDriverSignupScreen: $error");
+      });
     } else {
-      // Handle other roles' sign-up navigation if needed
+      print("Unknown role: $selectedRole");
     }
   }
 }

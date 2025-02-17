@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:indus/views/common/login_screen.dart';
+import 'package:indus/views/driver/home_screen.dart';
+import 'package:indus/views/student/student_home_screen.dart';
 import 'package:indus/views/business/business_profile_screen.dart';
 import 'package:indus/views/business/business_home_screen.dart';
-import 'package:indus/views/business/job_posting_screen.dart';
-import 'package:indus/views/business/offers_screen.dart';
-import 'package:indus/views/business/settings_screen.dart';
+import 'package:indus/views/common/bussiness_signup_screen.dart';
+import 'package:indus/views/common/student_driver_signup_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,14 +19,15 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      debugShowCheckedModeBanner: false, // Disable the debug banner
-      home: BusinessHomeScreen(),
+      debugShowCheckedModeBanner: false, // Remove the debug banner
+      initialRoute: '/',
       routes: {
-        '/home': (context) => BusinessHomeScreen(),
-        '/profile': (context) => BusinessProfileScreen(),
-        '/post-job': (context) => PostJobScreen(),
-        '/offers': (context) => OffersScreen(),
-        '/settings': (context) => SettingsScreen(),
+        '/': (context) => LoginScreen(),
+        '/studentHome': (context) => StudentHomeScreen(),
+        '/driverHome': (context) => DriverHomeScreen(),
+        '/businessHome': (context) => BusinessHomeScreen(),
+        '/businessSignUp': (context) => BusinessSignUpScreen(),
+        '/studentDriverSignUp': (context) => StudentDriverSignupScreen(),
       },
     );
   }

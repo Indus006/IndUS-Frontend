@@ -77,6 +77,7 @@ packages:
     dependency: "direct main"
     description:
       name: file_picker
+
       sha256: "6f6bfa8797f296965bdc3e1f702574ab49a540c19b9237b401e7c2b25dfe594c"
       url: "https://pub.dev"
     source: hosted
